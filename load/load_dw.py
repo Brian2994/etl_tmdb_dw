@@ -5,7 +5,7 @@ from pandas_gbq import to_gbq
 # Função para carregar no PostgreSQL
 def load_to_postgres(df, table_name="movies"):
     engine = create_engine(POSTGRES_URI)
-    df.to_sql(table_name, engine, if_exists="append", index=False)
+    df.to_sql(table_name, engine, if_exists="append", index=False) # append/replace
     print(f"✔ Tabela {table_name} carregada no PostgreSQL com sucesso!")
 
 # Função para carregar no BigQuery
